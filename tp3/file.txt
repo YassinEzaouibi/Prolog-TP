@@ -1,0 +1,13 @@
+% Cas de base : U0 = 1 et U1 = 1
+fibonacci(0, 1).
+fibonacci(1, 1).
+
+% Cas récursif : Un = U(n-1) + U(n-2)
+fibonacci(N, F) :-
+    N > 1,               % Vérifier que N est supérieur à 1
+    N1 is N - 1,         % Calculer N-1
+    N2 is N - 2,         % Calculer N-2
+    fibonacci(N1, R1),   % Récursivement calculer F1 = Fibonacci(N-1)
+    fibonacci(N2, R2),   % Récursivement calculer F2 = Fibonacci(N-2)
+    F is F1 + F2.        % F = F1 + F2
+

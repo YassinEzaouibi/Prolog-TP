@@ -1,0 +1,23 @@
+polynome(X, X).
+polynome(C,_):- number(C).
+polynome(X):- integer(X).
+polynome(x^N):- integer(N).
+%polynome(x^N, x):- N > 0, integer(N).
+
+%exercice 2
+
+%abs
+abs(X, Y):- X >= 0, Y is X.
+abs(X, Y):- X < 0, Y is -X.
+
+%min
+min(X, Y, Z):- (X =< Y, Z is X); Z is Y.
+%min(X, Y, Z):- Y =< X, Z is Y.
+%max like the min but reverse the signs
+max(X, Y, Z):- (X >= Y, Z is X); Z is Y.
+
+%pgcd
+pgcd(X, 0, X):- X > 0, !.
+%pgcd(X, Y, gcd):-  .
+
+%ppcm
